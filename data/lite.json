@@ -1,0 +1,12 @@
+{
+	"id":14,
+	"firstName":"Jason",
+	"lastName":"Huang",
+	"active":true,
+	"address":{
+		"street":"190 st",
+		"floor":"third floor"
+	},
+	"languages":["Java","JS"],
+	"company":"Gama"
+}
