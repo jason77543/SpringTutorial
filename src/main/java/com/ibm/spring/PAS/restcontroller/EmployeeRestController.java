@@ -35,12 +35,12 @@ public class EmployeeRestController {
 		employeeService = theEmployeeService;
 	}
 
-	@GetMapping("/Employee")
+	@GetMapping("/employee")
 	public List<Employee> findAll() {
 		return employeeService.findAll();
 	}
 	
-	@GetMapping("/Employee/{empId}")
+	@GetMapping("/employee/{empId}")
 	public Employee getEmployeeById(@PathVariable int empId) {
 		Employee employee = employeeService.findById(empId);
 		if(employee == null) {
@@ -49,7 +49,7 @@ public class EmployeeRestController {
 		return employee;
 	}
 
-	@PostMapping("/Employee")
+	@PostMapping("/employee")
 	public Employee addEmployee(@RequestBody Employee theEmployee) {
 		theEmployee.setId(0);
 		employeeService.save(theEmployee);
@@ -57,13 +57,13 @@ public class EmployeeRestController {
 	}
 	
 	// when add mapping for Put --> update existing data
-	@PutMapping("/Employee")
+	@PutMapping("/employee")
 	public Employee updateEmployee(@RequestBody Employee theEmployee) {
 		employeeService.save(theEmployee);
 		return theEmployee;
 	}
 	
-	@DeleteMapping("/Employee/{empId}")
+	@DeleteMapping("/employee/{empId}")
 	public String deleteEmployee(@PathVariable int empId) {
 		Employee employee = employeeService.findById(empId);
 		if(employee == null) {

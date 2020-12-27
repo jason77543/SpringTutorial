@@ -49,7 +49,6 @@ public class Employee {
 		this.lastName = lastName;
 	}
 	
-	// 因Hibernate底層需要空的建構子
 	public Employee() {
 	}
 	

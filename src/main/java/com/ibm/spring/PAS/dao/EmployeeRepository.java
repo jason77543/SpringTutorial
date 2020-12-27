@@ -4,7 +4,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.ibm.spring.PAS.entity.Employee;
 
-@RepositoryRestResource(path = "members")
+//@RepositoryRestResource(path = "members")
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 }
