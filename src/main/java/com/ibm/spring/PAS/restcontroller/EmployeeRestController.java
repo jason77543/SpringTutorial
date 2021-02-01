@@ -44,6 +44,7 @@ public class EmployeeRestController {
 	public Employee getEmployeeById(@PathVariable int empId) {
 		Employee employee = employeeService.findById(empId);
 		if(employee == null) {
+			System.out.println("Emp id not found");
 			throw new RuntimeException("Emp id not found: "+empId);
 		}
 		return employee;

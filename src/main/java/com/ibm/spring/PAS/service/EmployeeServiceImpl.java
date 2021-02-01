@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 //import com.ibm.spring.PAS.dao.EmployeeDAO;
 import com.ibm.spring.PAS.dao.EmployeeRepository;
@@ -14,6 +17,8 @@ import com.ibm.spring.PAS.entity.Employee;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+	
+	
 	private EmployeeRepository employeeRepository;
 
 	@Autowired
@@ -21,6 +26,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository = theEmployeeRepository;
 	}
 
+	
+	
 	@Override
 	@Transactional
 	public List<Employee> findAll() {
@@ -33,7 +40,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Optional<Employee> result = employeeRepository.findById(theId);
 
 		Employee theEmployee = null;
-
+		System.out.println("findById");
 		if (result.isPresent()) {
 			theEmployee = result.get();
 		} else {
